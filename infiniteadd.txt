@@ -1,0 +1,30 @@
+#include <stdio.h>
+int noinput()
+{
+    static int sum=0;
+    int i;
+    printf("Enter no:");
+    scanf("%d",&i);
+    getchar();
+    sum=sum+i;
+return sum;
+}
+
+int main()
+{
+    char ch;
+    int s;
+   
+   
+    do{
+        s=noinput();
+        printf("press Y to stop or N to cont..");
+        scanf("%c",&ch);
+        getchar();
+        if(ch=='Y')
+            break;
+       
+    }while(1);
+printf("sum=%d",s);
+    return 0;
+}
