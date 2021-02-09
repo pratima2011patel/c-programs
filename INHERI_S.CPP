@@ -1,44 +1,44 @@
-
 #include<iostream.h>
 #include<conio.h>
 class stud
 {
 public: int sid;
 	char sname[20],add[30];
-public: void set()
+public: void set1()
 	{
 	cout<<"\nEnter studeent details like sid,name ,address";
 	cin>>sid>>sname>>add;
 	}
-	void dis()
+	void dis1()
 	{
 	cout<<"\nThe student id is :-"<<sid;
 	cout<<"\nThe name is :-"<<sname;
 	cout<<"\nThe address of student is:-"<<add;
 	}
 };
-class exam: public stud
+class exam: public virtual stud
 {
-public: char p1[30],p2[20];
-public: void set()
-	{ stud::set();
-	 cout<<"\nEnter paper name";
+public: int p1,p2;
+public: void set2()
+	{ /*stud::set();*/
+	 cout<<"\nEnter paper marks";
 	 cin>>p1>>p2;
 	}
-	void dis()
-	{stud::dis();
+	void dis2()
+	{
+	/*stud::dis();*/
 	cout<<"\nPaper-1"<<p1<<"\nPaper -2"<<p2;
 	}
 };
-class sport
+class sport: public virtual stud
 {
 public:int smark;
-public: void sset()
+public: void set3()
 	{
 	cout<<"Enter sports marks";
 	cin>>smark;
 	}
-	void sdis()
+	void dis3()
 	{
 	/*stud::dis();*/
 	cout<<"\nSports subject marks are:-"<<smark;
@@ -48,17 +48,19 @@ class result:public exam,public sport
 {
 public:
 	int tmarks;
-public: void set()
+public: /*void set4()
 	{
-	exam::set();
+	/*exam::set();
 	sport::sset();
 	cout<<"\nEnter total marks:-";
 	cin>>tmarks;
-	}
-	void dis()
+	} */
+
+	void add()
 	{
-	exam::dis();
-	sport::sdis();
+       /*	exam::dis();
+	sport::sdis();*/
+	tmarks=p1+p2+smark;
 	cout<<"\nThe total marks of an student is :-"<<tmarks;
 	}
 };
@@ -66,7 +68,13 @@ void main()
 {
   result r1;
   clrscr();
-  r1.set();
-  r1.dis();
+  r1.set1();
+  r1.set2();
+  r1.set3();
+
+  r1.dis1();
+  r1.dis2();
+  r1.dis3();
+  r1.add();
   getch();
 }
