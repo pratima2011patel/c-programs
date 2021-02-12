@@ -5,7 +5,7 @@ int main()
 clrscr();
 char s1[2000];
 fstream f1("file.txt",ios::in);
-fstream f2("file2.txt",ios::out);
+fstream f2("file2.txt",ios::app);
 while(!f1.eof())
 {
 f1.getline(s1,2000);
