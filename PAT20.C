@@ -1,18 +1,28 @@
-#include<conio.h>
 #include<stdio.h>
-void main()
+#include<conio.h>
+main()
 {
-int i,j,n=1;
+char c1='A',c2='b';
+int i,j,k;
 clrscr();
-for(i=5;i<=1;i--)
-{
-for(j=0;j<=4;j++)
-{
-printf("%d",n);
-}
-printf("\n");
-n++;
+	for(k=1;k<=2;k++)
+	{
+	printf("%c",c1);
+	printf("%c",c2);
+	c2++;
+	printf("%c",c2);
+	c1=c1+3;
+	printf("%c",c1);
+	c2=c2+2;
+	printf("%c",c2);
+	c1='A';
+	c2='b';
+	printf("\n");
+	for(i=1;i<=5;i++)
+	{
+	printf("%d",i);
+	}
+	printf("\n");
 }
 getch();
 }
-
